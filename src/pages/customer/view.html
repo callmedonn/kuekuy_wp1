@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../styles/globalstyle.css">
+    <link rel="stylesheet" href="../../styles/customer/view.css">
+  </head>
+  <body>
+    <!-- Navbar Section Start -->
+    <nav class="navbar bg-light fixed-top shadow-sm">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img src="../../../assets/img/logo.png" alt="kuekuyLogo" width="130">
+          </a>
+          <div class="search-custom d-flex">
+              <textarea name="search" id="search" placeholder="cari jenis kue..."></textarea>
+              <div class="ic-search d-flex align-items-center ps-2">
+                  <img src="../../../assets/img/ic-search.png" class="ps-1" alt="ic-search" width=18>
+              </div>
+          </div>
+          <div class="access">
+            <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">Keluar</button>
+          </div>
+        </div>
+    </nav>
+    <!-- Navbar Section End -->
+    <!-- Content Start -->
+    <div class="container view">
+        <div class="content d-flex">
+            <div class="s1 d-flex justify-content-center align-items-center">
+                <img src="../../../assets/img/cake1.png" alt="cake" width="200">
+            </div>
+            <div class="s2">
+                <h1>Birthday Cake</h1>
+                <p class="text-muted">sdmvdbjdf ekrnkekbeklb</p>
+                <p class="ongkir text-muted">Ongkos Kirim ( + Rp. 15.000,- )</p>
+                <p class="price">Harga Rp. 100.000,-</p>
+                
+            </div>
+            <div class="s3">
+                <div>
+                    <h2>Total Pembelian</h2>
+                    <p class="price">Rp. 115.000,-</p>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Beli Sekarang</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Content End -->
+     <!-- Modal Bayar Start --> 
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog sty-modal modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Pembayaran</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>Pesanan : Birthday Cake</p>
+              <p>Harga : Rp. 100.000,-</p>
+              <p>Ongkos Kirim : Rp. 15.000,-</p>
+              <p>Biaya Admin : Rp. 2.000,-</p>
+              <h6>Total pembayaran : Rp.200.000</h6>
+              <div>
+                  <h6>Pembayaran melalui : </h6>
+                  <img src="../../../assets/img/Bank_Central_Asia.png" alt="BCA" width="50">
+              </div>
+              <label for="formFileDisabled" class="form-label mt-3">Upload Bukti Transfer : </label>
+                <input class="form-control" type="file" id="formFileDisabled"  />
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" >Bayar Sekarang</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal Bayar End -->
+        <!-- Footer Start -->
+        <footer>
+            <div class="container footer">
+              <div class="content d-flex justify-content-around">
+                <div class="c1">
+                  <ul>
+                    <li class="fw-bold">Tentang</li>
+                    <li>
+                      <a href="">Kebijakan Privasi</a>
+                    </li>
+                    <li>
+                      <a href="">Syarat Dan Ketentuan</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="c2">
+                  <ul>
+                    <li class="fw-bold">Kontak Kami</li>
+                    <li>
+                      <a href="">0838-7223-9021</a>
+                    </li>
+                    <li>
+                      <a href="">kuekuy@gmail.com</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="c3">
+                  <ul>
+                    <li class="fw-bold">Sosial Media</li>
+                    <li>
+                      <a href="">@kuekuy.ind</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="cr">
+                <p>&copy; copyright 2022 | kuekuy</p>
+              </div>
+            </div>
+          </footer>
+          <!-- Footer End -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  </body>
+</html>

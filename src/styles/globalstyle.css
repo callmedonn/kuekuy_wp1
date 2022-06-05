@@ -77,3 +77,87 @@
     margin-top: 150px;
 }
 /* Heading End */
+
+/* Modal Start */
+.sty-modal h5,
+.sty-modal label {
+    color: var(--fontColor) !important;
+}
+/* Modal End */
+
+/* Content Start */
+.container.content .content {
+    margin: 50px 0;
+    flex-wrap: wrap;
+}
+.container.content .content .box {
+    width: 280px;
+    height: 380px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    transform: scale(.98);
+    cursor: pointer;
+    transition: .4s;
+    margin-right: 25px;
+}
+.container.content .content .box:hover {
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    transform: scale(1);
+}
+.container.content .content .box .image {
+    background-color: var(--primary);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding: 50px;
+}
+
+.container.content .content .box .content-box {
+    padding: 10px;
+}
+
+.container.content .content .box .content-box h3 {
+    color: var(--fontColor);
+    font-size: 22px;
+    font-weight: 600;
+}
+.container.content .content .box .content-box .text-muted {
+    font-size: 14px;
+}
+.container.content .content .box .content-box .price {
+    color: var(--fontColor);
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* Content End */
+
+/* Footer Start */
+footer {
+    background-color: var(--grey);
+    height: 300px;
+}
+footer .container.container.footer {
+    padding: 20px;
+    box-sizing: border-box;
+}
+footer .container.container.footer .cr {
+    text-align: center;
+    margin-top: 80px;
+}
+footer .container.container.footer .cr p{
+    color: var(--fontColor);
+}
+
+footer .container.footer ul li {
+    list-style: none;
+}
+footer .container.footer ul li a{
+    text-decoration: none;
+    color: var(--fontColor);
+    transition: .2s;
+}
+footer .container.footer ul li a:hover{
+    color: var(--secondary)
+}
+/* Footer End */
