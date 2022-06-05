@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+:root {
+    --primary: #01999A;
+    --secondary: #B8E439;
+    --fontColor: #3d3d3d;
+    --grey: #EDEDED;
+    --greyDark: #9b9b9b;
+    --shadow: 0 0 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    color: var(--secondary);
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Search Start */
+.container .search-custom textarea {
+    outline: none;
+    border: 2px solid rgba(0, 0, 0, 0.196);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    resize: none;
+    width: 600px;
+    height: 40px;
+    padding: 8px 0 0 10px;
+    font-size: 12px;
+}
+
+.container .search-custom .ic-search {
+    cursor: pointer;
+    width: 45px;
+    height: 40px;
+    padding: 8px;
+    background-color: var(--grey);
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    border: 2px solid rgba(0, 0, 0, 0.196);
+    transition: .2s;
+}
+.container .search-custom .ic-search:hover {
+    background-color: var(--primary);
+}
+/* Search End */
+
+/* Heading Start */
+.container header {
+    box-shadow:var(--shadow);
+    width: 800px;
+    border-radius: 15px;
+    margin-top: 150px;
+} 
+
+.container.header p {
+    color: var(--fontColor);
+}
+
+.container.header p.plu {
+    color: var(--fontColor);
+    text-decoration: line-through;
+}
+
+.container.header p.plp {
+    color: var(--fontColor);
+    font-size: 20px;
+}
+
+.container header #carouselExampleIndicators img {
+    border-radius: 15px;
+}
+
+.container .promotion-header {
+    box-shadow:var(--shadow);
+    padding: 18px;
+    width: 350px;
+    border-radius: 15px;
+    margin-top: 150px;
+}
+/* Heading End */
