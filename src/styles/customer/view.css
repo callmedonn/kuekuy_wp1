@@ -26,7 +26,6 @@
     height: 350px;
     box-shadow: var(--shadow);
     border-radius: 10px;
-    background-color: var(--primary);
 }
 
 .container.view .s2 ,
@@ -38,6 +37,7 @@
     padding: 50px;
     box-sizing: border-box;
     border-radius: 10px;
+    background-color: var(--primary);
 }
 
 .container.view .s3 h2 {
@@ -53,4 +53,13 @@
     font-size: 20px;
     font-weight: 600;
     color: var(--fontColor);
+}
+
+.modal-body.pay p ,
+.modal-body.pay h6 {
+    color: var(--fontColor);
+}
+
+.modal-body.pay h6 {
+    font-weight: 600;
 }

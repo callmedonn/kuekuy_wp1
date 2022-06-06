@@ -106,10 +106,27 @@
     transform: scale(1);
 }
 .container.content .content .box .image {
-    background-color: var(--primary);
+    /* background-color: var(--primary); */
+    border-bottom: 2px solid rgba(0, 0, 0, 0.119);
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     padding: 50px;
+}
+
+.btn-buying {
+    background-color: var(--primary);
+    color: #fff;
+    padding: 5px 15px;
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    width: 100%;
+    height: 38px;
+    transition: .2s;
+}
+.btn-buying:hover {
+    background-color: #00b3b3;
 }
 
 .container.content .content .box .content-box {

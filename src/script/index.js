@@ -1,45 +1,37 @@
-const products = [
-    {
-        id: "1",
-        title: "Birthday Cake",
-        desc: "sdvbsmdnbv vsdmbvsdbmv sdvkshkjvfhddfb",
-        price: 120000,
-        image: "../../../assets/img/cake1.png"
-    },
-    {
-        id: "1",
-        title: "KKJKEG",
-        desc: "sdvbsmdnbv vsdmbvsdbmv sdvkshkjvfhddfb",
-        price: 120000,
-        image: "../../../assets/img/cake1.png"
-    },
-    {
-        id: "1",
-        title: "Birthday Cake",
-        desc: "sdvbsmdnbv vsdmbvsdbmv sdvkshkjvfhddfb",
-        price: 120000,
-        image: "../../../assets/img/cake1.png"
-    },
-    {
-        id: "1",
-        title: "Birthday Cake",
-        desc: "sdvbsmdnbv vsdmbvsdbmv sdvkshkjvfhddfb",
-        price: 120000,
-        image: "../../../assets/img/cake1.png"
-    }
-]
+const data = localStorage.getItem('products')
+const dataAcct = localStorage.getItem('account')
+const products = JSON.parse(data)
+const acct = JSON.parse(dataAcct)
+
+const login = () => {
+    const inputEmail = document.getElementById('inputEmail').value
+    const inputPass = document.getElementById('inputPass').value
+
+    const getEmail = acct.find(data => data.email === inputEmail)
+    const getPass = acct.find(data => data.password === inputPass)
+
+    if(getEmail) {
+        if(getPass) {
+            localStorage.setItem('login', JSON.stringify(getEmail))
+            swal("Login berhasil", "success");
+            setTimeout(() => {
+                window.location.href = './pages/customer/index.html';
+            },1500)
+        }else swal("Email atau password salah!");
+    } else swal("Email atau password salah!");
+}
 
 products.map(data => {
     document.querySelector('.container.content .content').innerHTML += `
     <div class="box" style="width: 280px;height: 380px;border-radius: 20px;box-shadow: var(--shadow);transform: scale(.98);cursor: pointer;transition: .4s;margin: 50px 25px 50px 0;">
-        <div class="image d-flex align-content-center justify-content-center" style=" background-color: var(--primary);border-top-left-radius: 20px;border-top-right-radius: 20px;padding: 50px;">
-            <img src="${data.image}" alt="cake1" width="100">
+        <div class="image d-flex align-content-center justify-content-center" style="border-top-left-radius: 20px;border-top-right-radius: 20px;padding: 50px;">
+            <img src="${data.image}" alt="cake1" width="95">
         </div>
         <div class="content-box" style="padding: 10px;">
             <h3 style="color: #3d3d3d;font-size: 22px;font-weight: 600;">${data.title}</h3>
             <p class="text-muted">${data.desc}</p>
             <p class="price" style="color: #3d3d3d;font-size: 18px;font-weight: 600;">${data.price}</p>
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Beli</button>
+            <button type="button" class="btn-buying" data-bs-toggle="modal" data-bs-target="#exampleModal">Beli</button>
         </div>
     </div>
     `
