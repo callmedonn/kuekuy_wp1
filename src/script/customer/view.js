@@ -1,12 +1,27 @@
 const dataView = localStorage.getItem('view') 
 const vwData = JSON.parse(dataView) 
+const dataAcct = localStorage.getItem('login') 
+const acct = JSON.parse(dataAcct) 
 
 const onSubmit = () => {
     const fileUpload = document.getElementById('formFileDisabled').value
+    const address = document.getElementById('floatingTextarea').value
     var path = fileUpload;
     var filename = path.replace(/^.*\\/, "");
+    
     if(filename) {
-        swal("Good job!", "You clicked the button!", "success");
+        swal("Pembayaran berhasil!", "", "success");
+        localStorage.setItem('view', JSON.stringify({...vwData, status:true
+      })) 
+        localStorage.setItem('trById', JSON.stringify({
+          email: acct,
+          idProduct: vwData.idProduct,
+          address: address,
+          file: filename,
+          title:vwData.title,
+          image:vwData.image,
+          total: (vwData.price + vwData.ongkir + vwData.admin)
+      })) 
         setTimeout(() => {
             window.location.href = 'view.html';
         },1500)
@@ -47,9 +62,17 @@ document.querySelector('.container.view').innerHTML = `
             <div class="s3">
                 <div>
                     <h2 style="color: #fff;">Total Pembelian</h2>
-                    <p class="price" style="color: #fff;">Rp. ${(vwData.price + vwData.ongkir)},-</p>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Beli Sekarang</button>
+                    <p class="price" style="color: #fff;" >Rp. ${(vwData.price + vwData.ongkir)},-</p>
+                    ${vwData.status ? `<button type="button" class="btn btn-success">Success</button>` :
+                    `<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Beli Sekarang</button>`}
                 </div>
             </div>
         </div>
+`
+document.querySelector('.detail-pay').innerHTML = `
+    <p>Pesanan : ${vwData.title}</p>
+    <p>Harga : Rp. ${vwData.price},-</p>
+    <p>Ongkir : Rp. ${vwData.ongkir},-</p>
+    <p>Admin : Rp. ${vwData.admin},-</p>
+    <h6>Total pembayaran : Rp. ${(vwData.price + vwData.ongkir + vwData.admin)}</h6>
 `

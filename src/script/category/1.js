@@ -21,7 +21,9 @@ const login = () => {
     } else swal("Email atau password salah!");
 }
 
-products.map(data => {
+const fltr = products.filter(data => data.tipe === "bday")
+
+fltr.map(data => {
     document.querySelector('.container.content .content').innerHTML += `
     <div class="box" style="width: 280px;height: 420px;border-radius: 20px;box-shadow: var(--shadow);transform: scale(.98);cursor: pointer;transition: .4s;margin: 50px 25px 50px 0;">
         <div class="image d-flex align-content-center justify-content-center" style="border-top-left-radius: 20px;border-top-right-radius: 20px;padding: 50px;">

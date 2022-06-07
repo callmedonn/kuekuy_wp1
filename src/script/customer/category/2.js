@@ -4,10 +4,10 @@ const data = localStorage.getItem('products')
 const products = JSON.parse(data) 
 const dataCart = localStorage.getItem('cart') 
 const productsCart = JSON.parse(dataCart) 
-console.log(dataCart);
 
 const lengthCart = () => {
   if(productsCart.length !== null) document.querySelector('.p-cart').innerHTML = productsCart.length;
+  else document.querySelector('.p-cart').innerHTML = 0
 }
 
 lengthCart()
@@ -63,7 +63,6 @@ const logout = () => {
 }
 
 const addCart = (value) => {
-  console.log("cart");
   const getData = products.find(data => data.id === value.toString())
     localStorage.setItem('cart', JSON.stringify([...productsCart,
       {
@@ -81,7 +80,10 @@ const addCart = (value) => {
   },1600)
 }
 
-products.map(data => {
+const fltr = products.filter(data => data.tipe === "cookies")
+
+
+fltr.map(data => {
     document.querySelector('.container.content .content').innerHTML += `
     <div class="box" style="width: 280px;height: 420px;border-radius: 20px;box-shadow: var(--shadow);transform: scale(.98);cursor: pointer;transition: .4s;margin: 50px 25px 50px 0;">
         <div class="image d-flex align-content-center justify-content-center" style="border-top-left-radius: 20px;border-top-right-radius: 20px;padding: 50px;">

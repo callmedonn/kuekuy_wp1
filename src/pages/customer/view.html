@@ -12,15 +12,9 @@
     <!-- Navbar Section Start -->
     <nav class="navbar bg-light fixed-top shadow-sm">
         <div class="container">
-          <a class="navbar-brand" href="#">
+          <a class="navbar-brand" href="./index.html">
             <img src="../../../assets/img/logo.png" alt="kuekuyLogo" width="130">
           </a>
-          <div class="search-custom d-flex">
-              <textarea name="search" id="search" placeholder="cari jenis kue..."></textarea>
-              <div class="ic-search d-flex align-items-center ps-2">
-                  <img src="../../../assets/img/ic-search.png" class="ps-1" alt="ic-search" width=18>
-              </div>
-          </div>
           <div class="access">
             <button type="button" class="btn btn-secondary" onclick="logout()">Keluar</button>
           </div>
@@ -42,13 +36,17 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body pay">
-              <p>Pesanan : Birthday Cake</p>
-              <p>Harga : Rp. 100.000,-</p>
-              <p>Biaya Admin : Rp. 2.000,-</p>
-              <h6>Total pembayaran : Rp.200.000</h6>
+              <div class="detail-pay">
+
+              </div>
+              
               <div>
                   <h6>Pembayaran melalui : </h6>
                   <img src="../../../assets/img/Bank_Central_Asia.png" alt="BCA" width="50">
+              </div>
+              <div class="form-floating mt-2">
+                <p class="m-0 p-0 fw-bold">Alamat : </p>
+                <textarea class="form-control" placeholder="Masukkan alamat anda" id="floatingTextarea"></textarea>
               </div>
               <label for="formFileDisabled" class="form-label mt-3">Upload Bukti Transfer : </label>
                 <input class="form-control" type="file" id="formFileDisabled"  />
