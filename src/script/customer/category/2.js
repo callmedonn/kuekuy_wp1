@@ -6,7 +6,7 @@ const dataCart = localStorage.getItem('cart')
 const productsCart = JSON.parse(dataCart) 
 
 const lengthCart = () => {
-  if(productsCart.length !== null) document.querySelector('.p-cart').innerHTML = productsCart.length;
+  if(productsCart.length !== null) document.querySelector('.p-cart').innerHTML = (productsCart.length - 1);
   else document.querySelector('.p-cart').innerHTML = 0
 }
 

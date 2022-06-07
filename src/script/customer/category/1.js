@@ -7,7 +7,7 @@ const productsCart = JSON.parse(dataCart)
 
 const lengthCart = () => {
   console.log(prooductsCart, "dataCart");
-  if(productsCart.length !== null) document.querySelector('.p-cart').innerHTML = productsCart.length;
+  if(productsCart.length !== null) document.querySelector('.p-cart').innerHTML = (productsCart.length - 1);
   else document.querySelector('.p-cart').innerHTML = 0
 }
 
