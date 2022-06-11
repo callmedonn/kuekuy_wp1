@@ -6,7 +6,6 @@ const dataCart = localStorage.getItem('cart')
 const productsCart = JSON.parse(dataCart) 
 
 const lengthCart = () => {
-  console.log(prooductsCart, "dataCart");
   if(productsCart.length !== null) document.querySelector('.p-cart').innerHTML = (productsCart.length - 1);
   else document.querySelector('.p-cart').innerHTML = 0
 }
@@ -82,6 +81,7 @@ const addCart = (value) => {
 }
 
 const fltr = products.filter(data => data.tipe === "bday")
+
 
 fltr.map(data => {
     document.querySelector('.container.content .content').innerHTML += `

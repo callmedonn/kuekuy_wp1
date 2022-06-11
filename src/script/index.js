@@ -10,6 +10,9 @@ const login = () => {
     const getEmail = acct.find(data => data.email === inputEmail)
     const getPass = acct.find(data => data.password === inputPass)
 
+    console.log(acct);
+    console.log(getPass);
+
     if(getEmail) {
         if(getPass) {
             localStorage.setItem('login', JSON.stringify(getEmail))
@@ -19,6 +22,26 @@ const login = () => {
             },1500)
         } else swal("Email atau password salah!");
     } else swal("Email atau password salah!");
+}
+
+const register = () => {
+    const emailRegister = document.getElementById('emailRegister').value
+    const passRegister = document.getElementById('passRegister').value
+    const passRegisterConfirm = document.getElementById('passRegisterConfirm').value
+
+    if(emailRegister === "" || passRegister === ""|| passRegisterConfirm === "") swal("Masukkan email/password anda!");
+    else if (passRegister !== passRegisterConfirm) swal("Password tidak sesuai!");
+    else {
+        localStorage.setItem('account', JSON.stringify([{
+            email: emailRegister,
+            password:passRegister,
+        }]))
+
+        swal("Register berhasil", "sillahkan Login", "success");
+        setTimeout(() => {
+            window.location.href = './pages/customer/index.html';
+        },1500)
+    }
 }
 
 products.map(data => {
