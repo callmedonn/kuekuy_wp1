@@ -32,14 +32,14 @@ const register = () => {
     if(emailRegister === "" || passRegister === ""|| passRegisterConfirm === "") swal("Masukkan email/password anda!");
     else if (passRegister !== passRegisterConfirm) swal("Password tidak sesuai!");
     else {
-        localStorage.setItem('account', JSON.stringify([{
+        localStorage.setItem('account', JSON.stringify([...acct,{
             email: emailRegister,
             password:passRegister,
         }]))
 
         swal("Register berhasil", "sillahkan Login", "success");
         setTimeout(() => {
-            window.location.href = './pages/customer/index.html';
+            window.location.href = './index.html';
         },1500)
     }
 }

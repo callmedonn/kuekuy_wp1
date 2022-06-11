@@ -205,3 +205,25 @@ footer .container.footer ul li a:hover{
     color: var(--secondary)
 }
 /* Footer End */
+
+/* Admin Start */
+.box-admin {
+    width: 100%;
+    margin-top: 120px;
+    height: 400px;
+}
+.box-admin .box-1 {
+    background-color: #fff;
+    border-radius: 15px;
+    width: 30%;
+    height: 100%;
+    box-shadow: var(--shadow);
+}
+.box-admin .box-2 {
+    background-color: var(--primary);
+    border-radius: 15px;
+    width: 68%;
+    height: 100%;
+    box-shadow: var(--shadow);
+}
+/* Admin End */

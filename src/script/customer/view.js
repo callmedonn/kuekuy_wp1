@@ -2,6 +2,8 @@ const dataView = localStorage.getItem('view')
 const vwData = JSON.parse(dataView) 
 const dataAcct = localStorage.getItem('login') 
 const acct = JSON.parse(dataAcct) 
+const dataTransactions = localStorage.getItem('transactions') 
+const transactions = JSON.parse(dataTransactions) 
 
 const onSubmit = () => {
     const fileUpload = document.getElementById('formFileDisabled').value
@@ -22,6 +24,13 @@ const onSubmit = () => {
           image:vwData.image,
           total: (vwData.price + vwData.ongkir + vwData.admin)
       })) 
+        localStorage.setItem('transactions', JSON.stringify([...transactions,{
+          email: acct,
+          idProduct: vwData.idProduct,
+          address: address,
+          file: filename,
+          total: (vwData.price + vwData.ongkir + vwData.admin)
+      }])) 
         setTimeout(() => {
             window.location.href = 'view.html';
         },1500)

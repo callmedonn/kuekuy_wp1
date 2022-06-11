@@ -75,10 +75,20 @@ const dummyProducts = [
 
 // const dummyAccount = [
 //     {
-//         email: "anonym@gmail.com",
+//         email: "admin@gmail.com",
 //         password: "12345678",
 //     }
 // ]
+
+const dummyTransactions =   [
+    {
+        email: "",
+        idProduct: "",
+        address: "",
+        file: "",
+        total: ""
+    }
+]
 
 // const dummyCart =   [
 //     {
@@ -94,6 +104,7 @@ const dummyProducts = [
 const saveData = () => {
     localStorage.setItem('products', JSON.stringify(dummyProducts))
     // localStorage.setItem('account', JSON.stringify(dummyAccount))
+    localStorage.setItem('transactions', JSON.stringify(dummyTransactions))
     // localStorage.setItem('cart', JSON.stringify(dummyCart))
 }
 
