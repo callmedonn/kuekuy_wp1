@@ -16,7 +16,7 @@ const login = () => {
     if(getEmail) {
         if(getPass) {
             localStorage.setItem('login', JSON.stringify(getEmail))
-            swal("Login berhasil", "success");
+            swal("Masuk berhasil", "success");
             setTimeout(() => {
                 window.location.href = './pages/customer/index.html';
             },1500)
@@ -25,19 +25,19 @@ const login = () => {
 }
 
 const register = () => {
-    const emailRegister = document.getElementById('emailRegister').value
-    const passRegister = document.getElementById('passRegister').value
-    const passRegisterConfirm = document.getElementById('passRegisterConfirm').value
+    const emailDaftar = document.getElementById('emailDaftar').value
+    const passDaftar = document.getElementById('passDaftar').value
+    const passDaftarConfirm = document.getElementById('passDaftarConfirm').value
 
-    if(emailRegister === "" || passRegister === ""|| passRegisterConfirm === "") swal("Masukkan email/password anda!");
-    else if (passRegister !== passRegisterConfirm) swal("Password tidak sesuai!");
+    if(emailDaftar === "" || passDaftar === ""|| passDaftarConfirm === "") swal("Masukkan email/password anda!");
+    else if (passDaftar !== passDaftarConfirm) swal("Password tidak sesuai!");
     else {
         localStorage.setItem('account', JSON.stringify([...acct,{
-            email: emailRegister,
-            password:passRegister,
+            email: emailDaftar,
+            password:passDaftar,
         }]))
 
-        swal("Register berhasil", "sillahkan Login", "success");
+        swal("Daftar berhasil", "sillahkan Masuk", "success");
         setTimeout(() => {
             window.location.href = './index.html';
         },1500)
@@ -52,7 +52,7 @@ products.map(data => {
         </div>
         <div class="content-box" style="padding: 10px;">
             <h3 style="color: #3d3d3d;font-size: 22px;font-weight: 600;">${data.title}</h3>
-            <p class="text-muted">${data.desc}</p>
+            <p class="text-muted">${data.desc.slice(0,27)}...</p>
             <p class="price" style="color: #3d3d3d;font-size: 18px;font-weight: 600;">Rp. ${data.price}</p>
             <button type="button" class="btn-buying" data-bs-toggle="modal" data-bs-target="#exampleModal">Beli</button>
             <button type="button" class="btn-cart mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="buttonBuy(${data.id})" >Keranjang</button>
