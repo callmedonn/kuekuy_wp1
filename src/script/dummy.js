@@ -103,7 +103,7 @@ const dummyCart =   [
 
 const saveData = () => {
     localStorage.setItem('products', JSON.stringify(dummyProducts))
-    localStorage.setItem('account', JSON.stringify(dummyAccount))
+    // localStorage.setItem('account', JSON.stringify(dummyAccount))
     // localStorage.setItem('transactions', JSON.stringify(dummyTransactions))
     // localStorage.setItem('cart', JSON.stringify(dummyCart))
 }

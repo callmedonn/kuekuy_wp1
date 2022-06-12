@@ -10,8 +10,13 @@ const login = () => {
     const getEmail = acct.find(data => data.email === inputEmail)
     const getPass = acct.find(data => data.password === inputPass)
 
-    console.log(acct);
-    console.log(getPass);
+    if(inputEmail === "admin@gmail.com" || inputPass === "12345678") {
+        swal("Masuk berhasil", "success");
+            setTimeout(() => {
+                window.location.href = './pages/admin/index.html';
+            },1500)
+            return
+    }
 
     if(getEmail) {
         if(getPass) {

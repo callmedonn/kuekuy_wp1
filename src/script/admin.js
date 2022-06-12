@@ -2,12 +2,13 @@ const transactions = localStorage.getItem('transactions')
 const trData = JSON.parse(transactions)
 
 const transactionsData = trData.filter(data => data.idProduct !== "")
-const totalTransaction = trData.forEach(data => {
-    let result = 0
+trData.forEach(data => {
+  let result = 0
     
     result += data.total
-    return result
-})
+    document.querySelector('.tr-done').innerHTML = `Rp. ${result}`
+  })
+
 
 const logout = () => {
     swal({
@@ -28,6 +29,4 @@ const logout = () => {
       });
 }
 
-
 document.querySelector('.total-order').innerHTML = `${(transactionsData.length)}`
-document.querySelector('.tr-done').innerHTML = `Rp. ${totalTransaction?totalTransaction: 0}`
